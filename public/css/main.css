@@ -1,3 +1,73 @@
-body {
-	background-color: red;
+:root {
+	/*font-family*/
+	--font-basic: "Roboto" sans-serif;
+	/*font-weights*/
+	--weight-bold: 700;
+	--weight-normal: 400;
+	/*font-sizes*/
+	--font-smallest: 0.87rem;
+	--font-smaller: 1rem;
+	--font-small: 1.12rem;
+	--font-medium: 1.88rem;
+	--font-big: 2.5rem;
+	--font-bigger: 3.12rem;
+	--font-biggest: 3.75rem;
+	/*font-colors*/
+	--font-black: #172755;
+	--font-white: #FFFFFF;
+	--font-gray: #8794BA;
+	/*background-colors*/
+	--bg-blue: #172755;
+	--bg-darkblue: #0F1F4B;
+	--bg-purple: #EF2A82;
+	--bg-white: #FFFFFF;
+	--bg-gray: #E5E5E5;
+	/*line-heights*/
+	--height-smallest: 1.17; /*16-18.75; 30-35.16; 25-29.3; 40-46.88; 60-70.31*/
+	--heght-small: 1.2; /*31-37.2; 50-60*/
+	--height-medium: 1.4; /*14-19.6; 13-18.2; 16-22.4*/
+	--height-big: 1.5; /*18-27*/
+	/*border-radiuses*/
+	--rad-smallest: 0.78rem;
+	--rad-smaller: 1.05rem;
+	--rad-small: 1.88rem;
+	--rad-big: 4.25rem;
+	/*border-shorthands*/
+	--border-main: 1px solid #465B95;
+	--border-secondary: 1px solid #2A407C;
+	/*indents*/
+	--indent-sm-first: 0.95rem;
+	--indent-sm-second: 1.25rem;
+	--indent-sm-third: 1.88rem;
+	--indent-sm-fourth: 2.2rem;
+	--indent-sm-fifth: 2.5rem;
+	--indent-md-first: 2.8rem;
+	--indent-md-second: 3.12rem;
+	--indent-md-third: 5rem;
+	--indent-bg-first: 6.25rem;
+	--indent-bg-second: 8.12rem;
+	--indent-bg-third: 9.38rem;
+	--indent-bg-fourth: 13.13rem;
+}
+
+.feature__image {
+	filter: invert(12%) sepia(23%) saturate(4698%) hue-rotate(206deg) brightness(86%) contrast(98%);
+}
+ .social-network__item {
+ 	color: red;
+ }
+* {
+	box-sizing: border-box;
+}
+
+.side-indent {
+	padding: 0 2rem;
+}
+
+.bg-blue {
+	background: var(--bg-blue);
+}
+
+.bg-gray {
+	background: var(--bg-gray);
 }
