@@ -1,6 +1,9 @@
+/**
+ * Variables
+ */
 :root {
 	/*font-family*/
-	--font-basic: "Roboto" sans-serif;
+	--font-basic: "Roboto", sans-serif;
 	/*font-weights*/
 	--weight-bold: 700;
 	--weight-normal: 400;
@@ -24,10 +27,10 @@
 	--bg-gray: #E5E5E5;
 	/*line-heights*/
 	--height-smallest: 1.17; /*16-18.75; 30-35.16; 25-29.3; 40-46.88; 60-70.31*/
-	--heght-small: 1.2; /*31-37.2; 50-60*/
+	--height-small: 1.2; /*31-37.2; 50-60*/
 	--height-medium: 1.4; /*14-19.6; 13-18.2; 16-22.4*/
 	--height-big: 1.5; /*18-27*/
-	/*border-radiuses*/
+	/*border-radiuses*/ /*Вероятно не понадобится, потом убрать*/
 	--rad-smallest: 0.78rem;
 	--rad-smaller: 1.05rem;
 	--rad-small: 1.88rem;
@@ -36,11 +39,13 @@
 	--border-main: 1px solid #465B95;
 	--border-secondary: 1px solid #2A407C;
 	/*indents*/
-	--indent-sm-first: 0.95rem;
-	--indent-sm-second: 1.25rem;
-	--indent-sm-third: 1.88rem;
-	--indent-sm-fourth: 2.2rem;
-	--indent-sm-fifth: 2.5rem;
+	--indent-sm-first: 0.63rem;
+	--indent-sm-second: 0.95rem;
+	--indent-sm-third: 1.25rem;
+	--indent-sm-fourth: 1.56rem; /*Вероятно не понадобится, потом убрать*/
+	--indent-sm-fifth: 1.88rem;
+	--indent-sm-sixth: 2.2rem;
+	--indent-sm-seventh: 2.5rem;
 	--indent-md-first: 2.8rem;
 	--indent-md-second: 3.12rem;
 	--indent-md-third: 5rem;
@@ -48,26 +53,246 @@
 	--indent-bg-second: 8.12rem;
 	--indent-bg-third: 9.38rem;
 	--indent-bg-fourth: 13.13rem;
+	/*widths*/
+	--logo-width: 8.12rem;
+	--butt-max-width: 21rem;
+	/*heights*/
+	--logo-height: 1.88rem;
+	--mob-button-height: 1.25rem;
 }
 
 .feature__image {
 	filter: invert(12%) sepia(23%) saturate(4698%) hue-rotate(206deg) brightness(86%) contrast(98%);
 }
- .social-network__item {
- 	color: red;
- }
+/**
+ * Base styles 
+ */
+html {
+	font-family: var(--font-basic);
+	font-size: 16px;
+}
+
 * {
 	box-sizing: border-box;
 }
 
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	font-size: var(--font-smaller);
+	line-height: var(--height-smallest);
+	color: var(--font-gray);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+h2 {
+	margin: 0;
+}
+
+p {
+	font-size: var(--font-smallest);
+	line-height: var(--height-medium);
+	font-weight: var(--weight-normal);
+	color: var(--font-gray);
+	margin: var(--indent-sm-third) 0 0;
+}
+
+/*
+* Layout
+*/
 .side-indent {
-	padding: 0 2rem;
+	padding: 0 var(--indent-sm-third);
+}
+
+.wrapper {
+	background: var(--bg-gray);
 }
 
 .bg-blue {
 	background: var(--bg-blue);
 }
 
-.bg-gray {
-	background: var(--bg-gray);
+.heading-regular {
+	font-size: var(--font-medium);
+	line-height: var(--height-smallest);
+	color: var(--font-black);
+	font-weight: var(--weight-bold);
 }
+
+/*
+* Header block
+*/
+.header {
+	display: flex;
+	align-items: center;
+	padding-top: var(--indent-sm-second);
+	padding-bottom: var(--indent-sm-second);
+
+}
+
+.logo {
+	max-width: var(--logo-width);
+	height: var(--logo-height);
+}
+
+.header__log-in {
+	margin: 0 var(--indent-sm-second) 0 auto;
+}
+
+/*
+* Navigation block
+*/
+.navigation, .navigation_mobile__checkbox {
+	display: none;
+}
+
+.navigation_mobile__button {
+	fill: var(--font-gray);
+	/*Без высоты блок выше чем должен быть (сам свг 20рх внутри label, а label 24)
+	почему, лучший ли это вариант пофиксить?*/
+	max-height: var(--mob-button-height);
+}
+
+/*
+* Ilustrated block
+*/
+.illustrated {
+	display: flex;
+	flex-direction: column;
+}
+
+.illustrated__text {
+	display: flex;
+	flex-direction: column;
+}
+
+.illustrated__image {
+	margin: var(--indent-sm-fifth) 0;
+}
+.illustrated_primary::before {
+	content: '';
+	height: 0.32rem;
+	background-image: linear-gradient(#12214D, var(--bg-blue));
+}
+
+.illustrated_primary {
+	padding: 0;
+}
+
+/*Стайлил границу псевдоэлементом, поэтому
+ задавать отступы приходится не блоком, а элементами внутри*/
+.illustrated_primary .illustrated__image, 
+.illustrated_primary .illustrated__paragraph {
+	margin-left: var(--indent-sm-third);
+	margin-right: var(--indent-sm-third);
+}
+
+.illustrated__image-selected {
+	display: none;
+}
+
+.illustrated_primary .illustrated__heading {
+	font-size: var(--font-medium);
+	line-height: var(--height-small);
+	color: var(--font-white);
+	font-weight: var(--weight-bold);
+	margin: 0 var(--indent-sm-third);
+}
+
+.illustrated_primary .illustrated__paragraph {
+	font-size: var(--font-small);
+	line-height: var(--height-big);
+}
+
+/*
+* Button block
+*/
+.button {
+	display: inline-block;
+	padding: var(--indent-sm-first) var(--indent-md-second);
+	border: var(--border-main);
+	border-radius: var(--rad-big);
+	white-space: nowrap;
+	text-align: center;
+}
+
+.illustrated__button {
+	display: block;
+	padding-left: var(--indent-sm-second);
+	padding-right: var(--indent-sm-second);
+	border: none;
+	max-width: var(--butt-max-width);
+	margin: var(--indent-sm-fourth) var(--indent-sm-third) 1rem; /*Потом задать переменую*/
+}
+
+.button_purple {
+	color: var(--font-white);
+	background: var(--bg-purple);
+}
+
+/*
+* Illustrated_promary block angle line
+*/
+.illustrated_primary .illustrated__text:after {
+ 	content: '';
+	display: block;
+	width: 100%;
+	height: 31vw;
+	background: linear-gradient(172deg, var(--bg-blue) 18.4vw, var(--bg-purple) 18.9vw, var(--bg-purple) 22.8vw, var(--bg-gray) 23.2vw)
+}
+
+/*.illustrated_primary .illustrated__text::after {
+	content: '';
+	display: block;
+	border-top: 17px solid var(--bg-purple);
+	height: 3rem;
+	margin-bottom: 50px;
+	background: var(--bg-gray);
+  transform: rotate(-6deg) translateY(110px);
+  transform-origin: left bottom;
+  margin-left: -25px;*/
+  
+}
+
+.test {
+	padding: 5px;
+	width: 100%;
+	height: 120px;;
+	background: linear-gradient(to right bottom, red 50%, blue 50%, blue 64%, green 64%)
+}
+
+/*
+*Features block
+*/
+.features {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: var(--indent-sm-seventh);
+	/*check top indent after angle line fix*/
+}
+
+.features-group {
+	display: flex;
+	flex-direction: column;
+}
+
+.feature {
+	display: grid;
+	grid-template-columns: auto auto;	
+}
+.feature__image {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	align-self: center;
+}
+
+
