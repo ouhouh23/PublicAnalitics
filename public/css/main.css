@@ -44,6 +44,7 @@
 	--indent-sm-first: 0.63rem;
 	--indent-sm-second: 0.95rem;
 	--indent-sm-third: 1.25rem;
+	--indent-sm-third-negative: -1.25rem;
 	--indent-sm-fourth: 1.56rem; /*Вероятно не понадобится, потом убрать*/
 	--indent-sm-fifth: 1.88rem;
 	--indent-sm-sixth: 2.2rem;
@@ -59,6 +60,7 @@
 	--indent-bg-third: 9.38rem;
 	--indent-bg-fourth: 13.13rem;
 	/*widths*/
+	--page-width: 1180px;
 	--logo-width: 8.12rem;
 	--hero-button-max-width: 21rem;
 	--pricing-button-max-width: 13rem;
@@ -114,16 +116,21 @@ p {
 /*
 * Layout
 */
-.side-indent {
+
+.wrapper {
+	padding: 0 var(--indent-sm-third);
+	background: var(--bg-blue);
+}
+
+.wrapper-illustrated {
+	margin: 0 var(--indent-sm-third-negative);
+	background: var(--bg-gray);
 	padding: 0 var(--indent-sm-third);
 }
 
-.wrapper {
-	background: var(--bg-gray);
-}
-
-.bg-blue {
-	background: var(--bg-blue);
+.content-width {
+	max-width: var(--page-width);
+	margin: 0 auto;
 }
 
 .heading-regular {
@@ -192,20 +199,7 @@ p {
 	content: '';
 	height: 0.32rem;
 	background-image: linear-gradient(#12214D, var(--bg-blue));
-}
-
-.wrapper .illustrated_primary {
-	padding: 0;
-	margin: 0;
-	/*Подумать, может лучше будет переписать классы*/
-}
-
-/*Стайлил границу псевдоэлементом, поэтому
- задавать отступы приходится не блоком, а элементами внутри*/
-.illustrated_primary .illustrated__image, 
-.illustrated_primary .illustrated__paragraph {
-	margin-left: var(--indent-sm-third);
-	margin-right: var(--indent-sm-third);
+	margin: 0 var(--indent-sm-third-negative);
 }
 
 .illustrated__image-selected {
@@ -217,7 +211,7 @@ p {
 	line-height: var(--height-small);
 	color: var(--font-white);
 	font-weight: var(--weight-bold);
-	margin: 0 var(--indent-sm-third);
+	margin: 0;
 }
 
 .illustrated_primary .illustrated__paragraph {
@@ -249,7 +243,7 @@ p {
 	padding-right: var(--indent-sm-second);
 	border: none;
 	max-width: var(--butt-max-width);
-	margin: var(--indent-sm-fourth) var(--indent-sm-third) 1rem; /*Потом задать переменую*/
+	margin: var(--indent-sm-fourth) 0 1rem; /*Потом задать переменую*/
 }
 
 .button_purple {
@@ -351,10 +345,12 @@ p {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	overflow: hidden;
+	margin: 0 var(--indent-sm-third-negative);
 }
 
 .offer__header {
-	margin: var(--indent-sm-fifth) 0 var(--indent-md-third);
+	margin: var(--indent-sm-fifth) var(--indent-sm-third) var(--indent-md-third);
 }
 
 .offer__heading {
@@ -372,6 +368,7 @@ p {
 	background: var(--bg-white);
 	padding: var(--indent-sm-sixth) var(--indent-sm-fifth);
 	border-radius: var(--rad-small);
+	text-align: center;
 }
 
 .pricing-plan__level {
@@ -379,7 +376,6 @@ p {
 	line-height: var(--height-smallest);
 	font-weight: var(--weight-bold);
 	color: var(--font-darkblue);
-	text-align: center;
 }
 
 .pricing-plan__limit {
@@ -387,14 +383,8 @@ p {
 	line-height: var(--height-big);
 	color: var(--font-gray);
 	padding: var(--indent-sm-first) 0 var(--indent-sm-sixth);
-	text-align: center;
 	border-bottom: var(--border-main);
 }
-
-.pricing-plan_optimal {
-	margin: 0 var(--indent-sm-third);
-}
-
 
 .pricing-plan__cost {
 	font-size: var(--font-biggest);
@@ -402,7 +392,6 @@ p {
 	font-weight: var(--weight-bold);
 	color: var(--font-darkblue);
 	padding-top: var(--indent-sm-third);
-	text-align: center;
 }
 
 .pricing-plan__сurrency {
@@ -413,7 +402,6 @@ p {
 	font-size: var(--font-smallest);
 	line-height: var(--height-medium);
 	color: var(--font-gray);
-	text-align: center;
 }
 
 .pricing-plan__button {
@@ -421,6 +409,10 @@ p {
 	padding-right: var(--indent-md-sixth);
 	margin: var(--indent-sm-sixth) auto var(--indent-sm-first);
 	max-width: var(--pricing-button-max-width);
+}
+
+.pricing-plan_optimal {
+	margin: 0 var(--indent-sm-third);
 }
 
 .pricing-plan_optimal .pricing-plan__button {
@@ -436,7 +428,6 @@ p {
 	padding-top: var(--indent-md-first);
 	padding-bottom: var(--indent-md-first);
 	border-top: var(--border-secondary);
-	/*переписывать под новые врапперы*/
 }
 
 .social-network {
