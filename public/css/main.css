@@ -120,13 +120,12 @@ p {
 .wrapper {
 	padding: 0 var(--indent-sm-third);
 	background: var(--bg-blue);
-	overflow: hidden;
 }
 
 .wrapper-illustrated {
 	margin: 0 var(--indent-sm-third-negative);
 	background: var(--bg-gray);
-	/*padding: 0 var(--indent-sm-third);*/
+	padding: 0 var(--indent-sm-third);
 }
 
 .content-width {
@@ -186,7 +185,6 @@ p {
 .illustrated__text {
 	display: flex;
 	flex-direction: column;
-	z-index: 1;
 }
 
 .illustrated__image {
@@ -260,26 +258,77 @@ p {
 /*
 * Illustrated_promary block angle line
 */
-.illustrated_primary {
-	padding-bottom: 111px;
-	margin-bottom: 5vw;
+
+/**
+ * Все работает идеально, не ломать
+ */
+:root {
+  --container-width: 800px;
+  --container-padding: 1rem;
+  --base-deg: -7deg; 
+  --tan-base-deg: 0.1278; /* https://geleot.ru/education/math/geometry/angle/tangent for tan calculations */
+  --fluid-cut-height: calc(100vw * var(--tan-base-deg));
+  --container-cut-height: calc(var(--container-width) * var(--tan-base-deg));
+  --fluid-difference: calc((var(--fluid-cut-height) - var(--container-cut-height)) / 2);
+  --fixed-spacing: 2rem;
+  --border-width: 1rem;
+  --text-color: rgb(0, 0, 0);
+  --primary-text-color: rgb(255, 255, 255);
+  --primary-back-color: rgb(83, 39, 184);
+  --primary-border-color: rgb(214, 25, 136);
 }
 
-.wrapper-illustrated::before {
-	content: '';
-	display: block;
-	border-top: 17px solid var(--bg-purple);
-	background: var(--bg-gray);
-	transform: rotate(-6deg);
-	/*transform: translateY(calc(-98.83vw * 0.0615)) rotate(-6deg); 
-	Не привязывается к углу линия, приглось transfprm origin*/ 
-	height: 10.2vw;
-	/*height: calc(0.123 * 100.7vw)*/
-	width: 100.7vw;
-	transform-origin: left top;
-	margin-left: -1vw;
-	z-index: -1;
-	margin-bottom: -15vw;
+.container {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  color: var(--text-color);
+}
+
+.container > .content {
+  position: relative;
+  max-width: var(--container-width);
+  padding: var(--container-padding);
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.container.-primary {
+  background-color: var(--primary-border-color);
+  color: var(--primary-text-color);
+  padding-bottom: calc(var(--fixed-spacing) + var(--fluid-cut-height));
+  margin-bottom: calc(var(--fixed-spacing) - var(--border-width));
+  clip-path: polygon(
+    0 0, 
+    100% 0, 
+    100% calc(100% - var(--fluid-cut-height)), 
+    0 100%
+  );
+}
+
+.container.-primary::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-back-color);
+  clip-path: polygon(
+    0 0, 
+    100% 0, 
+    100% calc(100% - var(--fluid-cut-height) - var(--border-width)), 
+    0 calc(100% - var(--border-width))
+  );
+}
+
+@media only screen and (min-width: 800px) { /* min-width = --container-width */
+  .container.-primary {
+    padding-bottom: calc(var(--fixed-spacing) + var(--fluid-cut-height) - var(--fluid-difference));
+    margin-bottom: calc(var(--fixed-spacing) - var(--border-width) - var(--fluid-difference));
+  } 
 }
 
 /*
@@ -290,21 +339,18 @@ p {
 	flex-direction: column;
 	margin-bottom: var(--indent-md-fourth);
 	/*check top indent after angle line fix*/;
-		padding-top: 67px;
 }
 
 .features__group {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	z-index: 1;
 }
 
 .features__header {;
 	max-width: var(--feature-max-width);
 	margin: 0 auto;
-	z-index: 1;
-	
+
 }
 
 .feature {
@@ -338,12 +384,6 @@ p {
 }
 /*подбирал тень на глаз*/
 
-/*.test2 {
-	width: 400px;
-	height: 200px;
-	margin: 50px auto;
-	background: linear-gradient( to left bottom, black  17px, green 17px);
-	clip-path: polygon(0% 100%, 100% 100%, 0% 0%);*/
 
 /*
 *Pricing Plan block
@@ -448,3 +488,74 @@ p {
 	color: var(--font-gray);
 }
 
+/**
+ * Все работает идеально, не ломать
+ */
+:root {
+  --container-width: 800px;
+  --container-padding: 1rem;
+  --base-deg: -7deg; 
+  --tan-base-deg: 0.1278; /* https://geleot.ru/education/math/geometry/angle/tangent for tan calculations */
+  --fluid-cut-height: calc(100vw * var(--tan-base-deg));
+  --container-cut-height: calc(var(--container-width) * var(--tan-base-deg));
+  --fluid-difference: calc((var(--fluid-cut-height) - var(--container-cut-height)) / 2);
+  --fixed-spacing: 2rem;
+  --border-width: 1rem;
+  --text-color: rgb(0, 0, 0);
+  --primary-text-color: rgb(255, 255, 255);
+  --primary-back-color: rgb(83, 39, 184);
+  --primary-border-color: rgb(214, 25, 136);
+}
+
+.container {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  color: var(--text-color);
+}
+
+.container > .content {
+  position: relative;
+  max-width: var(--container-width);
+  padding: var(--container-padding);
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.container.-primary {
+  background-color: var(--primary-border-color);
+  color: var(--primary-text-color);
+  padding-bottom: calc(var(--fixed-spacing) + var(--fluid-cut-height));
+  margin-bottom: calc(var(--fixed-spacing) - var(--border-width));
+  clip-path: polygon(
+    0 0, 
+    100% 0, 
+    100% calc(100% - var(--fluid-cut-height)), 
+    0 100%
+  );
+}
+
+.container.-primary::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-back-color);
+  clip-path: polygon(
+    0 0, 
+    100% 0, 
+    100% calc(100% - var(--fluid-cut-height) - var(--border-width)), 
+    0 calc(100% - var(--border-width))
+  );
+}
+
+@media only screen and (min-width: 800px) { /* min-width = --container-width */
+  .container.-primary {
+    padding-bottom: calc(var(--fixed-spacing) + var(--fluid-cut-height) - var(--fluid-difference));
+    margin-bottom: calc(var(--fixed-spacing) - var(--border-width) - var(--fluid-difference));
+  } 
+}
