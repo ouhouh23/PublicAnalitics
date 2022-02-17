@@ -18,51 +18,53 @@
 	</head>
 	<body>
 		<main class="wrapper">
-			<header class="header content-width">
-				<a class="logo header__logo" href="#">
-					<img src="assets/logos/header-logo.svg" alt="page logo"/>
-				</a>
+			<div class="wrapper-inclined-top">
+				<header class="header content-width">
+					<a class="logo header__logo" href="#">
+						<img src="assets/logos/header-logo.svg" alt="page logo"/>
+					</a>
 
-				<input type="checkbox" class="navigation_mobile__checkbox" id="navigation_mobile-checkbox">
+					<input type="checkbox" class="navigation_mobile__checkbox" id="navigation_mobile-checkbox">
 
-				<nav class="navigation header__navigation navigation_mobile">
-				  <ul>
-				  	<li class="navigation__item"><a href="#">Products</a></li>
-				  	<li class="navigation__item"><a href="#">Pricing</a></li>
-				  	<li class="navigation__item"><a href="#">FAQ</a></li>
-				  	<li class="navigation__item"><a href="#">Blog</a></li>
-				  	<li class="navigation__item"><a href="#">Blog</a></li>	
-					</ul>
+					<nav class="navigation header__navigation navigation_mobile">
+					  <ul>
+					  	<li class="navigation__item"><a href="#">Products</a></li>
+					  	<li class="navigation__item"><a href="#">Pricing</a></li>
+					  	<li class="navigation__item"><a href="#">FAQ</a></li>
+					  	<li class="navigation__item"><a href="#">Blog</a></li>
+					  	<li class="navigation__item"><a href="#">Blog</a></li>	
+						</ul>
 
-					<a class="button button_blue" href="#">Sign Up</a>
-				</nav>
-				<a class="header__log-in" href="#">Sign in</a>
+						<a class="button button_blue" href="#">Sign Up</a>
+					</nav>
+					<a class="header__log-in" href="#">Sign in</a>
 
-				<label for="navigation_mobile-checkbox" class="navigation_mobile__button">
-					<svg viewBox="0 0 100 80" width="24" height="20">
-            <rect width="100" height="13"></rect>
-            <rect y="30" width="100" height="13"></rect>
-            <rect y="60" width="100" height="13"></rect>
-        	</svg>
-        </label>
-			</header>
-			<section class="illustrated illustrated_primary content-width">
-				<img class="illustrated__image" src="assets/charts/chart-2.svg" alt="set of diagrams"/>
-				<img class="illustrated__image-selected" src="assets/charts/chart-1.svg" alt="selected diagram"/>
+					<label for="navigation_mobile-checkbox" class="navigation_mobile__button">
+						<svg viewBox="0 0 100 80" width="24" height="20">
+	            <rect width="100" height="13"></rect>
+	            <rect y="30" width="100" height="13"></rect>
+	            <rect y="60" width="100" height="13"></rect>
+	        	</svg>
+	        </label>
+				</header>
+				<section class="illustrated illustrated_primary content-width">
+					<img class="illustrated__image" src="assets/charts/chart-2.svg" alt="set of diagrams"/>
+					<img class="illustrated__image-selected" src="assets/charts/chart-1.svg" alt="selected diagram"/>
 
-				<div class="illustrated__text">
-					<h1 class="illustrated__heading">
-						Monitor your business on real-time dashboard
-					</h1>
+					<div class="illustrated__text">
+						<h1 class="illustrated__heading">
+							Monitor your business on real-time dashboard
+						</h1>
 
-					<p class="illustrated__paragraph">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum nisi aliquet volutpat
-						pellentesque volutpat est. Sapien in etiam vitae nibh nunc mattis imperdiet sed nullam.
-					</p>
+						<p class="illustrated__paragraph">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum nisi aliquet volutpat
+							pellentesque volutpat est. Sapien in etiam vitae nibh nunc mattis imperdiet sed nullam.
+						</p>
 
-					<a class="button illustrated__button button_purple" href="#">Try fo free</a>
-				</div>
-			</section>
+						<a class="button illustrated__button button_purple" href="#">Try fo free</a>
+					</div>
+				</section>
+			</div>
 
 			<div class="wrapper-illustrated">
 				<section class="features content-width">
@@ -160,108 +162,91 @@
 					<img class="illustrated__image" src="assets/charts/chart-5.svg" alt="another type diagram image"/>
 				</section>
 			</div>
+			<div class="wrapper-inclined-bottom">
+				<section class="offer content-width">
+					<div class="offer__header">
+						<h2 class="offer__heading heading-regular">
+							Pricing Plans
+						</h2>
 
-			<section class="offer content-width">
-				<div class="offer__header">
-					<h2 class="offer__heading heading-regular">
-						Pricing Plans
-					</h2>
-
-					<p class="offer__paragraph">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-						Elementum nisi aliquet volutpat pellentesque volutpat est.
-					</p>
-				</div>
-				<div class="offer__pricing">
-					<div class="pricing-plan">
-						<span class="pricing-plan__level">Starter</span>
-
-						<span class="pricing-plan__limit">up to 3 users</span>
-
-						<h3 class="pricing-plan__cost">
-							<small class="pricing-plan__сurrency">$</small>29
-						</h3>
-
-						<span class="pricing-plan__period">per month</span>
-
-						<a class="button pricing-plan__button button_darkblue" href="#">Order</a>
+						<p class="offer__paragraph">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+							Elementum nisi aliquet volutpat pellentesque volutpat est.
+						</p>
 					</div>
+					<div class="offer__pricing">
+						<div class="pricing-plan">
+							<span class="pricing-plan__level">Starter</span>
 
-					<div class="pricing-plan pricing-plan_optimal">
-						<span class="pricing-plan__level">Standart</span>
+							<span class="pricing-plan__limit">up to 3 users</span>
 
-						<span class="pricing-plan__limit">up to 20 users</span>
+							<h3 class="pricing-plan__cost">
+								<small class="pricing-plan__сurrency">$</small>29
+							</h3>
 
-						<h3 class="pricing-plan__cost">
-							<small class="pricing-plan__сurrency">$</small>99
-						</h3>
+							<span class="pricing-plan__period">per month</span>
 
-						<span class="pricing-plan__period">per month</span>
+							<a class="button pricing-plan__button button_darkblue" href="#">Order</a>
+						</div>
 
-						<a class="button pricing-plan__button button_purple" href="#">Order</a>
+						<div class="pricing-plan pricing-plan_optimal">
+							<span class="pricing-plan__level">Standart</span>
+
+							<span class="pricing-plan__limit">up to 20 users</span>
+
+							<h3 class="pricing-plan__cost">
+								<small class="pricing-plan__сurrency">$</small>99
+							</h3>
+
+							<span class="pricing-plan__period">per month</span>
+
+							<a class="button pricing-plan__button button_purple" href="#">Order</a>
+						</div>
+
+						<div class="pricing-plan">
+							<span class="pricing-plan__level">Premium</span>
+
+							<span class="pricing-plan__limit">up to 200 users</span>
+
+							<h3 class="pricing-plan__cost">
+								<small class="pricing-plan__сurrency">$</small>299
+							</h3>
+
+							<span class="pricing-plan__period">per month</span>
+
+							<a class="button pricing-plan__button button_darkblue" href="#">Order</a>
+						</div>
 					</div>
-
-					<div class="pricing-plan">
-						<span class="pricing-plan__level">Premium</span>
-
-						<span class="pricing-plan__limit">up to 200 users</span>
-
-						<h3 class="pricing-plan__cost">
-							<small class="pricing-plan__сurrency">$</small>299
-						</h3>
-
-						<span class="pricing-plan__period">per month</span>
-
-						<a class="button pricing-plan__button button_darkblue" href="#">Order</a>
-					</div>
-				</div>
-			</section>
-			<footer class="footer content-width">
-				<a class="logo footer__logo" href="#">
-					<img src="assets/logos/footer-logo.svg" alt="page logo"/>
-				</a>
-
-				<nav class="navigation footer__navigation">
-				  <ul>
-				  	<li class="navigation__item"><a href="#">Products</a></li>
-				  	<li class="navigation__item"><a href="#">Pricing Plans</a></li>
-				  	<li class="navigation__item"><a href="#">FAQ</a></li>
-				  	<li class="navigation__item"><a href="#">Blog</a></li>
-					</ul>
-				</nav>
-
-				<div class="social-network">
-					<a class="social-network__item" href="#">
-						<i class="fa-brands fa-facebook-f"></i> 
+				</section>
+				<footer class="footer content-width">
+					<a class="logo footer__logo" href="#">
+						<img src="assets/logos/footer-logo.svg" alt="page logo"/>
 					</a>
 
-					<a class="social-network__item" href="#">
-						<i class="fa-brands fa-twitter"></i>
-					</a>
+					<nav class="navigation footer__navigation">
+					  <ul>
+					  	<li class="navigation__item"><a href="#">Products</a></li>
+					  	<li class="navigation__item"><a href="#">Pricing Plans</a></li>
+					  	<li class="navigation__item"><a href="#">FAQ</a></li>
+					  	<li class="navigation__item"><a href="#">Blog</a></li>
+						</ul>
+					</nav>
 
-					<a class="social-network__item" href="#">
-						<i class="fa-brands fa-instagram"></i>
-					</a>
-				</div>
-			</footer>
+					<div class="social-network">
+						<a class="social-network__item" href="#">
+							<i class="fa-brands fa-facebook-f"></i> 
+						</a>
+
+						<a class="social-network__item" href="#">
+							<i class="fa-brands fa-twitter"></i>
+						</a>
+
+						<a class="social-network__item" href="#">
+							<i class="fa-brands fa-instagram"></i>
+						</a>
+					</div>
+				</footer>
+			</div>
 		</main>
-
-
-		<section class="container -primary">
-      <div class="content">
-        <h1>Test</h1>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-    </section>
-
-    <section class="container">
-      <div class="content">
-        <h1>Test</h1>
-
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-    </section>
-    <div class="test">1</div>
 	</body>
 </html>
