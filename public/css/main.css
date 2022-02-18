@@ -203,6 +203,11 @@ p {
 	max-width: var(--logo-mob-width);
 }
 
+.header__navigation, .navigation_mobile {
+	display: none;
+}
+
+
 .header__log-in {
 	margin: 0 var(--indent-sm-second) 0 auto;
 }
@@ -216,14 +221,23 @@ p {
 		margin-right: var(--indent-sm-sixth);
 	}
 }
+
 /*
 * Navigation block
 */
-.navigation, .navigation_mobile__checkbox {
+.navigation {
+	display: grid;
+	grid-template-columns: auto;
+	text-align: center;
+	grid-gap: var(--indent-sm-third) 0;
+	margin-bottom: var(--indent-sm-third);
+}
+
+.navigation-mobile__checkbox {
 	display: none;
 }
 
-.navigation_mobile__button {
+.navigation-mobile__button {
 	fill: var(--font-gray);
 	/*Без высоты блок выше чем должен быть (сам свг 20рх внутри label, а label 24)
 	почему, лучший ли это вариант пофиксить?*/
@@ -231,19 +245,27 @@ p {
 	cursor: pointer;
 }
 
-.navigation_mobile__checkbox:checked + .navigation_mobile {
+.navigation-mobile__checkbox:checked + .navigation-mobile {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	padding: var(--indent-sm-third);
-	background: var(--bg-blue);
 	position: absolute;
 	right: var(--indent-sm-third);
 	top: 100%;
 	border-radius: var(--rad-small);
 	box-shadow: 0 0 0 var(--indent-sm-first) var(--bg-purple) inset;
+	padding: var(--indent-sm-third);
+	background: var(--bg-blue);
 }
 
+@media only screen and (min-width: 800px) {
+	.navigation {
+		grid-template-columns: auto auto auto auto;
+		grid-gap: 0 var(--indent-sm-third);
+		margin-bottom: 0;
+	}
+}
+
+}
 /*
 * Ilustrated block
 */
@@ -609,9 +631,9 @@ p {
 	border-top: var(--border-secondary);
 }
 
-.footer__navigation .navigation__item > a {
-		/*font-size: var(--font-smallest);*/
-	}
+.footer__navigation {
+	display: none;
+}
 
 .social-network {
 	display: flex;
@@ -626,10 +648,7 @@ p {
 
 
 @media only screen and (min-width: 800px) {
-	.footer__navigation {
-		display: grid;
-		grid-template-columns: auto auto auto auto;
-		background-color: red;
-		grid-gap: 0 20px;
+	.footer__navigation, .header__navigation {
+		display: flex;
 	}
 }
