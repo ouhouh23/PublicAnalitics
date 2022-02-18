@@ -45,7 +45,7 @@
 	--indent-sm-second: 0.95rem;
 	--indent-sm-third: 1.25rem;
 	--indent-sm-third-negative: -1.25rem;
-	--indent-sm-fourth: 1.56rem; /*Вероятно не понадобится, потом убрать*/
+	--indent-sm-fourth: 1.56rem;
 	--indent-sm-fifth: 1.88rem;
 	--indent-sm-sixth: 2.2rem;
 	--indent-sm-seventh: 2.5rem;
@@ -71,7 +71,7 @@
 	--social-network-width: 135px;
 	--border-width: 1rem;
 	/*heights*/
-	--mob-button-height: 1.25rem;
+	--mob-button-height: 20px;
 	--img-max-width: 600px;
 	--img-primary-max-width: 800px;
 	/*inclines*/
@@ -102,6 +102,10 @@ body {
 
 ul {
 	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: inherit;
+	grid-template-columns: inherit;
 }
 
 a {
@@ -132,6 +136,12 @@ p {
 @media only screen and (min-width: 500px) {
 	html {
 		font-size: 20px;
+	}
+}
+
+@media only screen and (min-width: 800px) {
+	html {
+		font-size: 16px;
 	}
 }
 /*
@@ -166,14 +176,26 @@ p {
 .hover-bright:hover {
 	filter: brightness(1.1);
 }
+
+@media only screen and (min-width: 800px) {
+	.side-indent {
+		padding-left: var(--indent-sm-seventh);
+		padding-right: var(--indent-sm-seventh);
+	}
+
+	.heading-regular {
+		text-align: center;  
+		font-size: var(--font-big);
+	}
+}
 /*
 * Header block
 */
 .header {
 	display: flex;
 	align-items: center;
-	padding-top: var(--indent-sm-second);
-	padding-bottom: var(--indent-sm-second);
+	padding-top: var(--indent-sm-third);
+	padding-bottom: var(--indent-sm-third);
 	position: relative;
 }
 
@@ -189,6 +211,10 @@ p {
 	.logo {
 		max-width: var(--logo-desct-width);
 	}
+
+	.header__log-in {
+		margin-right: var(--indent-sm-sixth);
+	}
 }
 /*
 * Navigation block
@@ -201,7 +227,7 @@ p {
 	fill: var(--font-gray);
 	/*Без высоты блок выше чем должен быть (сам свг 20рх внутри label, а label 24)
 	почему, лучший ли это вариант пофиксить?*/
-	max-height: var(--mob-button-height);
+	height: var(--mob-button-height);
 	cursor: pointer;
 }
 
@@ -229,6 +255,12 @@ p {
 .illustrated__text {
 	display: flex;
 	flex-direction: column;
+	max-width: var(--img-max-width);
+	margin: 0 auto;
+}
+
+.illustrated_primary .illustrated__text {
+	max-width: 100%;
 }
 
 .illustrated__image {
@@ -264,6 +296,25 @@ p {
 	line-height: var(--height-big);
 }
 
+@media only screen and (min-width: 800px) {
+	.illustrated_primary::before {
+		display: none;
+	}
+
+	.illustrated_primary .illustrated__heading {
+		font-size: var(--font-bigger);
+	}
+
+	.illustrated_primary .illustrated__image {
+		margin-top: var(--indent-sm-fifth);
+		margin-bottom: var(--indent-md-third);
+	}
+
+	.illustrated__image {
+		margin-top: var(--indent-md-third);
+		margin-bottom: var(--indent-md-sixth);
+	}
+}
 /*
 * Button block
 */
@@ -282,7 +333,7 @@ p {
 	padding-right: var(--indent-sm-second);
 	border: none;
 	max-width: var(--hero-button-max-width);
-	margin: var(--indent-sm-fourth) 0 1rem; /*Потом задать переменую*/
+	margin: var(--indent-sm-fourth) 0 var(--indent-sm-first);
 }
 
 .button_purple {
@@ -293,6 +344,13 @@ p {
 .button_darkblue {
 	color: var(--font-white);
 	background: var(--bg-darkblue);
+}
+
+@media only screen and (min-width: 800px) {
+	.illustrated__button {
+		margin-top: var(--indent-md-second);
+		margin-bottom: 0;
+	}	
 }
 /*
 * Illustrated_promary block angle line
@@ -378,8 +436,7 @@ p {
 .features {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: var(--indent-md-fourth);
-	/*check top indent after angle line fix*/;
+	margin: var(--indent-sm-first) 0 var(--indent-md-fourth);
 }
 
 .features__group {
@@ -414,6 +471,43 @@ p {
 	margin-top: 0;
 }
 
+@media only screen and (min-width: 800px) {
+	.features {
+		margin: 0 auto var(--indent-md-sixth);
+	}
+
+	.features__paragraph {
+		margin-top: var(--indent-sm-fifth);
+		font-size: var(--font-small);
+		text-align-last: center;
+	}
+
+	.features__group {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-gap: 0 var(--indent-sm-third);
+
+	}
+	.feature {
+		grid-template-columns: auto;
+		grid-gap: 0;
+		align-content: start;
+	}
+
+	.feature__image {
+		margin: 0 auto;
+	}
+
+	.feature__heading {
+		text-align: center;
+		margin: var(--indent-sm-fourth) 0 var(--indent-sm-second);
+	}
+
+	.feature__paragraph {
+		text-align: center;
+		font-size: var(--font-smaller);
+	}
+}
 /*
 * Illustrated block
 */
@@ -515,6 +609,10 @@ p {
 	border-top: var(--border-secondary);
 }
 
+.footer__navigation .navigation__item > a {
+		/*font-size: var(--font-smallest);*/
+	}
+
 .social-network {
 	display: flex;
 	justify-content: space-between;
@@ -524,4 +622,14 @@ p {
 .social-network__item {
 	font-size: var(--font-icon);
 	color: var(--font-gray);
+}
+
+
+@media only screen and (min-width: 800px) {
+	.footer__navigation {
+		display: grid;
+		grid-template-columns: auto auto auto auto;
+		background-color: red;
+		grid-gap: 0 20px;
+	}
 }
