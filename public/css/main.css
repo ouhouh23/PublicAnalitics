@@ -207,9 +207,12 @@ p {
 	display: none;
 }
 
-
 .header__log-in {
 	margin: 0 var(--indent-sm-second) 0 auto;
+}
+
+.header .header__button {
+	display: none;
 }
 
 @media only screen and (min-width: 500px) {
@@ -221,7 +224,21 @@ p {
 		margin-right: var(--indent-sm-sixth);
 	}
 }
+@media only screen and (min-width: 1000px) {
+	.header__navigation {
+		display: flex;
+		align-items: center;
+	}
 
+	.header__navigation .navigation {
+		grid-template-columns: auto auto auto auto auto;
+		margin-left: var(--indent-bg-first); 
+	}
+
+	.header .header__button {
+		display: flex;
+	}
+}
 /*
 * Navigation block
 */
@@ -237,7 +254,7 @@ p {
 	display: none;
 }
 
-.navigation-mobile__button {
+.navigation-mobile__menu {
 	fill: var(--font-gray);
 	/*Без высоты блок выше чем должен быть (сам свг 20рх внутри label, а label 24)
 	почему, лучший ли это вариант пофиксить?*/
@@ -260,11 +277,19 @@ p {
 @media only screen and (min-width: 800px) {
 	.navigation {
 		grid-template-columns: auto auto auto auto;
-		grid-gap: 0 var(--indent-sm-third);
+		grid-gap: 0 var(--indent-sm-sixth);
 		margin-bottom: 0;
 	}
 }
 
+@media only screen and (min-width: 1000px) {
+	.navigation-mobile__menu {
+		display: none;
+	}
+
+	.navigation-mobile .navigation-mobile__button {
+		display: none;
+	}
 }
 /*
 * Ilustrated block
@@ -337,6 +362,7 @@ p {
 		margin-bottom: var(--indent-md-sixth);
 	}
 }
+
 /*
 * Button block
 */
@@ -498,6 +524,10 @@ p {
 		margin: 0 auto var(--indent-md-sixth);
 	}
 
+	.features__header {
+		padding: 0 var(--indent-md-third);
+	}
+
 	.features__paragraph {
 		margin-top: var(--indent-sm-fifth);
 		font-size: var(--font-small);
@@ -547,11 +577,10 @@ p {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 0 var(--indent-sm-third-negative);
 }
 
 .offer__header {
-	margin: var(--indent-sm-fifth) var(--indent-sm-third) var(--indent-md-third);
+	margin: var(--indent-sm-fifth) auto var(--indent-md-third);
 }
 
 .offer__heading {
@@ -561,6 +590,7 @@ p {
 .offer__pricing {
 	display: flex;
 	padding-bottom: var(--indent-md-first);
+	margin: 0 var(--indent-sm-third-negative);
 }
 
 .pricing-plan {
@@ -620,12 +650,45 @@ p {
 	border: none;
 }
 
+@media only screen and (min-width: 800px) {
+	.offer {
+		align-items: flex-start;
+	}
+
+	.offer__header {
+		margin-top: 0;
+		margin-bottom: var(--indent-md-fifth);
+		padding: 0 var(--indent-md-third);
+		max-width: 50rem;
+	}
+
+	.offer__paragraph {
+		font-size: var(--font-small);
+		text-align-last: center;
+	}
+	.offer__pricing {
+		width: 100%;
+		justify-content: space-between;
+		margin: 0;
+	}
+
+	.pricing-plan {
+		padding: var(--indent-sm-sixth);
+	}
+
+	.pricing-plan__button {
+		padding-left: 7vw;
+		padding-right: 7vw;
+	}
+
+}
 /*
 *Footer block
 */
 .footer {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	padding-top: var(--indent-md-first);
 	padding-bottom: var(--indent-md-first);
 	border-top: var(--border-secondary);
@@ -648,7 +711,7 @@ p {
 
 
 @media only screen and (min-width: 800px) {
-	.footer__navigation, .header__navigation {
+	.footer__navigation {
 		display: flex;
 	}
 }
