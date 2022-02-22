@@ -62,7 +62,13 @@
 				</header>
 
 				<section class="illustrated illustrated_primary content-width side-indent">
-					<img class="illustrated__image" src="assets/charts/chart-2.svg" alt="set of diagrams"/>
+					<picture class="illustrated__image">
+						<source media="(min-width: 800px)" srcset="assets/charts/chart-2.svg"/>
+						<source media="(max-width: 799px)" srcset="assets/charts/chart-2.png"/>
+						<source media="(max-width: 799px)" srcset="assets/charts/chart-2@2.png 2x"/>
+						<source media="(max-width: 799px)" srcset="assets/charts/chart-2@2.png 3x"/>
+						<img src="assets/charts/chart-2.svg" alt="set of diagrams"/>
+					</picture>
 					<img class="illustrated__image-selected" src="assets/charts/chart-1.svg" alt="selected diagram"/>
 
 					<div class="illustrated__text">
@@ -277,6 +283,5 @@
 				</footer>
 			</div>
 		</main>
-		<div class="test">test</div>
 	</body>
 </html>
