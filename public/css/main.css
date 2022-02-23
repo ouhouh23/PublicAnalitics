@@ -409,7 +409,6 @@ p {
 
 .illustrated_primary .illustrated__image {
 	margin-bottom: var(--indent-sm-fifth);
-	max-width: 500px;
 }
 
 .illustrated__image-selected {
@@ -457,7 +456,6 @@ p {
 	.illustrated_primary .illustrated__image {
 		margin-top: var(--indent-sm-fifth);
 		margin-bottom: var(--indent-md-third);
-		max-width: 100%;
 	}
 
 	.illustrated__button {
