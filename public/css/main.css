@@ -249,6 +249,7 @@ p {
 	align-items: center;
 	padding-top: var(--indent-sm-third);
 	padding-bottom: var(--indent-sm-third);
+	position: relative;
 }
 
 .logo {
