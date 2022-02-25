@@ -2,14 +2,14 @@
  * Variables
  */
 :root {
-	/*font-family*/
+	/* font-family */
 	--font-basic: "Roboto", sans-serif;
 
-	/*font-weights*/
+	/* font-weights */
 	--weight-bold: 700;
 	--weight-normal: 400;
 
-	/*font-sizes*/
+	/* font-sizes */
 	--font-smallest: 0.87rem;
 	--font-smaller: 1rem;
 	--font-small: 1.12rem;
@@ -20,35 +20,35 @@
 	--font-bigger: 3.12rem;
 	--font-biggest: 3.75rem;
 
-	/*font-colors*/
+	/* font-colors */
 	--font-darkblue: #172755;
 	--font-white: #FFFFFF;
 	--font-gray: #8794BA;
 
-	/*background-colors*/
+	/* background-colors */
 	--bg-blue: #172755;
 	--bg-darkblue: #0F1F4B;
 	--bg-purple: #EF2A82;
 	--bg-white: #FFFFFF;
 	--bg-gray: #E5E5E5;
 
-	/*line-heights*/
-	--height-smallest: 1.17; /*16-18.75; 30-35.16; 25-29.3; 40-46.88; 60-70.31*/
-	--height-small: 1.2; /*31-37.2; 50-60*/
-	--height-medium: 1.4; /*14-19.6; 13-18.2; 16-22.4*/
-	--height-big: 1.5; /*18-27*/
+	/* line-heights */
+	--height-smallest: 1.17; /* 16-18.75; 30-35.16; 25-29.3; 40-46.88; 60-70.31 */
+	--height-small: 1.2; /* 31-37.2; 50-60 */
+	--height-medium: 1.4; /* 14-19.6; 13-18.2; 16-22.4 */
+	--height-big: 1.5; /* 18-27 */
 
-	/*border-radiuses*/
+	/* border-radiuses */
 	--rad-smallest: 0.78rem;
 	--rad-smaller: 1.05rem;
 	--rad-small: 1.88rem;
 	--rad-big: 4.25rem;
 
-	/*border-shorthands*/
+	/* border-shorthands */
 	--border-main: 1px solid #D3D9E9;
 	--border-secondary: 1px solid #2A407C;
 
-	/*indents*/
+	/* indents */
 	--indent-sm-first: 0.63rem;
 	--indent-sm-second: 0.95rem;
 	--indent-sm-third: 1.25rem;
@@ -70,26 +70,26 @@
 	--indent-bg-fifth: 13.13rem;
 	--fixed-spacing: 2.38rem;
 
-	/*widths*/
+	/* widths */
 	--page-width: 1260px;
-	--logo-mob-width: 130px;
-	--logo-desct-width: 170px;
+	--logo-mob-width: 8.12rem;
+	--logo-desct-width: 10.63rem;
 	--hero-button-max-width: 21rem;
 	--hero-button-width: 15rem;
 	--pricing-button-max-width: 13rem; 
 	--feature-min-width: 6.25rem;
 	--feature-max-width: 23.12rem;
-	--social-network-width: 135px;
+	--social-networks-width: 135px;
 	--pricing-plan-max-width: 21.25rem;
 	--illustrated-text-max-width: 34.37rem;
 	--border-width: 1rem;
 
-	/*heights*/
+	/* heights */
 	--mob-button-height: 1.25rem;
 	--img-max-width: 600px;
 	--img-primary-max-width: 800px;
 
-	/*inclines*/
+	/* inclines */
 	--base-deg: -7deg; 
   --tan-base-deg: 0.1278;
   --fluid-cut-height: calc(100vw * var(--tan-base-deg));
@@ -174,18 +174,18 @@ p {
 	margin: 0 auto;
 }
 
-.heading-regular {
+.heading {
 	font-size: var(--font-over-medium);
 	line-height: var(--height-smallest);
 	color: var(--font-darkblue);
 	font-weight: var(--weight-bold);
 }
 	
-.hover-bright {
+.button, .link {
 	transition: filter 350ms;
 }
 
-.hover-bright:hover {
+.button:hover, .link:hover {
 	filter: brightness(1.1);
 }
 
@@ -195,7 +195,7 @@ p {
 		padding-right: var(--indent-sm-seventh);
 	}
 
-	.heading-regular {
+	.heading {
 		text-align: center;  
 		font-size: var(--font-big);
 	}
@@ -311,8 +311,8 @@ p {
 
 .navigation-mobile__menu {
 	fill: var(--font-gray);
-	/*Без высоты блок выше чем должен быть (сам свг 20рх внутри label, а label 24)
-	почему, лучший ли это вариант пофиксить?*/
+	/* Без высоты блок выше чем должен быть (сам свг 20рх внутри label, а label 24)
+	почему, лучший ли это вариант пофиксить? */
 	height: var(--mob-button-height);
 	cursor: pointer;
 }
@@ -635,7 +635,7 @@ p {
 }
 
 /*
-*Features block
+* Features block
 */
 .features {
 	display: flex;
@@ -723,7 +723,7 @@ p {
 }
 
 /*
-*Pricing Plan block
+* Pricing Plan block
 */
 .offer {
 	display: flex;
@@ -891,7 +891,7 @@ p {
 }
 
 /*
-*Footer block
+* Footer block
 */
 .footer {
 	display: flex;
@@ -915,13 +915,13 @@ p {
 	display: none;
 }
 
-.social-network {
+.social-networks {
 	display: flex;
 	justify-content: space-between;
-	width: var(--social-network-width);
+	width: var(--social-networks-width);
 }
 
-.social-network__item {
+.social-networks__item {
 	font-size: var(--font-icon);
 	color: var(--font-gray);
 }
