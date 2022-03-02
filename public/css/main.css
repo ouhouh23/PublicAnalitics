@@ -139,7 +139,7 @@ img {
 }
 
 /*
-*Typoghraphy
+* Typoghraphy
 */
 a {
 	text-decoration: none;
@@ -259,7 +259,8 @@ p {
 		display: flex;
 	}
 
-	.header__navigation, .footer .footer__navigation {
+	.header__navigation,
+	.footer .footer__navigation {
 		display: flex;
 		align-items: center;
 	}
@@ -382,9 +383,6 @@ p {
 
 .illustrated__text {
 	max-width: var(--img-max-width);
-	/*flex-shrink: 20;*/
-	/*Без этого числа последняя пикча выебывается 
-	на 1000рх, не совсем понимаю почему*/
 }
 
 .illustrated__image {
@@ -574,16 +572,17 @@ p {
 		0 100%
   );
 }
-  .overlay-inclined-bottom::after {
-  	z-index: -2;
-  	background: var(--bg-purple);
-		clip-path: polygon(
-			0 var(--fluid-cut-height),
-			100% 0,
-			100% 100%,
-			0 100%	
- 		);
-  }
+
+.overlay-inclined-bottom::after {
+	z-index: -2;
+	background: var(--bg-purple);
+	clip-path: polygon(
+		0 var(--fluid-cut-height),
+		100% 0,
+		100% 100%,
+		0 100%	
+	);
+}
 
 @media only screen and (min-width: 1260px) {
   .overlay-inclined-top {
@@ -592,10 +591,12 @@ p {
   }
 
   .overlay-inclined-top::before {
-  	background-image: url(../assets/logos/background-logo.svg), url(../assets/logos/background-logo.svg);
+  	background-image: url(../assets/logos/background-logo.svg),
+  		url(../assets/logos/background-logo.svg);
   	background-repeat: no-repeat;
   	background-size: 1438px 1438px, 660px 660px;
-  	background-position: calc(50% + 500px) -1rem, calc(50% - 570px) -16rem;
+  	background-position: calc(50% + 500px) -1rem,
+  		calc(50% - 570px) -16rem;
   }
   
 
@@ -729,7 +730,6 @@ p {
 /*
 * Pricing plan block
 */
-
 .pricing-plan {
 	display: flex;
 	flex-direction: column;
@@ -912,4 +912,3 @@ p {
 	font-size: var(--font-icon);
 	color: var(--font-gray);
 }
-
