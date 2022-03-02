@@ -234,7 +234,6 @@ p {
 /*
 * Logo block
 */
-
 .logo {
 	max-width: var(--logo-mob-width);
 }
@@ -383,9 +382,9 @@ p {
 
 .illustrated__text {
 	max-width: var(--img-max-width);
-	flex-shrink: 20;
+	/*flex-shrink: 20;*/
 	/*Без этого числа последняя пикча выебывается 
-	на 100рх, не совсем понимаю почему*/
+	на 1000рх, не совсем понимаю почему*/
 }
 
 .illustrated__image {

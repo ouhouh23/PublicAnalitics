@@ -63,12 +63,16 @@
 			<section class="hero wrapper">
 				<div class="hero__image">
 					<div class="image-container">
-						<picture class="image-container__item_primary">
-							<source media="(min-width: 800px)" srcset="assets/charts/chart-2.svg" /> 
-							<source media="(max-width: 799px)" srcset="assets/charts/chart-2webp.webp" width="740" height="510" /> 
-							<source media="(max-width: 799px)" srcset="assets/charts/chart-2@2.png 2x" /> 
-							<source media="(max-width: 799px)" srcset="assets/charts/chart-2@3.png 3x" /> 
-							<img src="assets/charts/chart-2.svg" alt="set of diagrams" /> 
+						<picture>
+							<source class="image-container__item_primary"
+								media="(min-width: 800px)" srcset="assets/charts/chart-2.svg" /> 
+							<source class="image-container__item_primary"
+								media="(max-width: 799px)" srcset="assets/charts/chart-2webp.webp" width="740" height="510" /> 
+							<source class="image-container__item_primary"
+								media="(max-width: 799px)" srcset="assets/charts/chart-2@2.png 2x" /> 
+							<source class="image-container__item_primary"
+								media="(max-width: 799px)" srcset="assets/charts/chart-2@3.png 3x" /> 
+							<img class="image-container__item_primary" src="assets/charts/chart-2.svg" alt="set of diagrams" /> 
 						</picture>
 						<img class="image-container__item_secondary" src="assets/charts/chart-1.svg" alt="selected diagram" />
 					</div>
@@ -184,15 +188,8 @@
 					Vitae et, tortor pulvinar risus pulvinar sit amet.
 				</p>
 			</div>
-
-			<picture class="illustrated__image">
-				<source media="(min-width: 800px)" srcset="assets/charts/chart-5.svg" /> 
-				<source media="(max-width: 799px)" srcset="assets/charts/chart-5.png" width="600" height="410" /> 
-				<source media="(max-width: 799px)" srcset="assets/charts/chart-5@2.png 2x" /> 
-				<source media="(max-width: 799px)" srcset="assets/charts/chart-5@3.png 3x" /> 
-				<img src="assets/charts/chart-5.svg"
+			<img class="illustrated__image" src="assets/charts/chart-5.svg"
 					alt="another type diagram image" /> 
-			</picture>
 		</section>
 
 		<div class="overlay-inclined-bottom">
