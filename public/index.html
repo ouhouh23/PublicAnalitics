@@ -7,8 +7,8 @@
 
 		<title>Analytics landing</title>
 
-		<link rel="stylesheet" type="text/css" href="css/main.css" /> 
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" /> 
+		<link rel="stylesheet" type="text/css" href="css/main.css" /> 
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" /> 
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> 
@@ -26,7 +26,7 @@
 
 				<input type="checkbox" class="navigation-mobile__checkbox" id="navigation-mobile-checkbox">
 
-				<nav class="header__navigation navigation-mobile navigation-desctop">
+				<nav class="header__navigation navigation-mobile navigation-desktop">
 				  <ul class="navigation">
 				  	<li class="navigation__item link">
 				  		<a href="#">Products</a>
@@ -64,17 +64,24 @@
 				<div class="hero__image">
 					<div class="image-container">
 						<picture>
-							<source class="image-container__item image-container__item_primary"
-								media="(min-width: 800px)" srcset="assets/charts/chart-2.svg" /> 
-							<source class="image-container__item image-container__item_primary"
-								media="(max-width: 799px)" srcset="assets/charts/chart-2webp.webp" width="740" height="510" /> 
-							<source class="image-container__item image-container__item_primary"
-								media="(max-width: 799px)" srcset="assets/charts/chart-2@2.png 2x" /> 
-							<source class="image-container__item image-container__item_primary"
-								media="(max-width: 799px)" srcset="assets/charts/chart-2@3.png 3x" /> 
-							<img class="image-container__item image-container__item_primary" src="assets/charts/chart-2.svg" alt="set of diagrams" /> 
+							<source class="image image-container__item image-container__item_primary"
+								media="(min-width: 800px)"
+								srcset="assets/charts/chart-2.svg" /> 
+							<source class="image image-container__item image-container__item_primary"
+								media="(max-width: 799px)" 
+								srcset="assets/charts/chart-2webp.webp"
+								width="740" height="510" /> 
+							<source class="image image-container__item image-container__item_primary"
+								media="(max-width: 799px)"
+								srcset="assets/charts/chart-2@2.png 2x" /> 
+							<source class="image image-container__item image-container__item_primary"
+								media="(max-width: 799px)" 
+								srcset="assets/charts/chart-2@3.png 3x" /> 
+							<img class="image image-container__item image-container__item_primary" 
+								src="assets/charts/chart-2.svg" alt="set of diagrams" /> 
 						</picture>
-						<img class="image-container__item image-container__item_secondary" src="assets/charts/chart-1.svg" alt="selected diagram" />
+						<img class="image image-container__item image-container__item_secondary"
+							src="assets/charts/chart-1.svg" alt="selected diagram" />
 					</div>
 				</div> 
 
@@ -85,7 +92,9 @@
 
 					<p class="hero__paragraph">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elementum nisi aliquet volutpat
-						pellentesque volutpat est. Sapien in etiam vitae nibh nunc mattis imperdiet sed nullam.
+						pellentesque volutpat est. 
+						<span class="desktop-text">Sapien in etiam vitae nibh nunc mattis imperdiet sed nullam.
+						</span>
 					</p>
 
 					<a class="button hero__button button_primary" href="#">Try fo free</a>
@@ -106,7 +115,8 @@
 			</div>
 			<div class="features__group">
 				<div class="feature">
-					<img class="feature__image" src="assets/icons/planning.svg" alt="clock image" width="60" height="60" /> 
+					<img class="feature__image" src="assets/icons/planning.svg"
+						alt="clock image" width="60" height="60" /> 
 
 					<h3 class="feature__heading">Monitoring 24/7</h3>
 
@@ -117,7 +127,8 @@
 				</div>
 
 				<div class="feature">
-					<img class="feature__image" src="assets/icons/computer.svg" alt="computer image" width="60" height="60" /> 
+					<img class="feature__image" src="assets/icons/computer.svg" 
+						alt="computer image" width="60" height="60" /> 
 
 					<h3 class="feature__heading">Widget System</h3>
 
@@ -128,7 +139,8 @@
 				</div>
 
 				<div class="feature">
-					<img class="feature__image" src="assets/icons/speed.svg" alt="flying rocket image" width="60" height="60" /> 
+					<img class="feature__image" src="assets/icons/speed.svg" 
+						alt="flying rocket image" width="60" height="60" /> 
 
 					<h3 class="feature__heading">Best Perfomance</h3>
 
@@ -143,7 +155,7 @@
 		<section class="illustrated wrapper">
 			<div class="illustrated__text">
 				<h2 class="illustrated__heading heading">
-					Automated Reports & Widget Alerts
+					Automated Reports <br />& Widget Alerts
 				</h2>
 
 				<p class="illustrated__paragraph">
@@ -153,7 +165,7 @@
 					Vitae et, tortor pulvinar risus pulvinar sit amet.
 				</p>
 			</div>
-			<img class="illustrated__image" src="assets/charts/chart-3.svg" 
+			<img class="image illustrated__image" src="assets/charts/chart-3.svg" 
 				alt="diagram image with two options" width="600" height="410" /> 
 		</section>
 
@@ -171,7 +183,7 @@
 				</p>
 			</div>
 
-			<img class="illustrated__image" src="assets/charts/chart-4.svg" 
+			<img class="image illustrated__image" src="assets/charts/chart-4.svg" 
 				alt="another type diagram image" width="600" height="410" /> 
 		</section>
 
@@ -189,7 +201,7 @@
 				</p>
 			</div>
 
-			<img class="illustrated__image" src="assets/charts/chart-5.svg"
+			<img class="image illustrated__image" src="assets/charts/chart-5.svg"
 				alt="another type diagram image" width="600" height="410" /> 
 		</section>
 
@@ -254,10 +266,11 @@
 
 			<footer class="footer wrapper">
 				<a class="logo link" href="#">
-					<img src="assets/logos/footer-logo.svg" alt="page logo" width="170" height="37" />
+					<img src="assets/logos/footer-logo.svg" 
+						alt="page logo" width="170" height="37" />
 				</a>
 
-				<nav class="footer__navigation navigation-desctop">
+				<nav class="footer__navigation navigation-desktop">
 				  <ul class="navigation">
 				  	<li class="navigation__item link">
 				  		<a href="#">Products</a>
